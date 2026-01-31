@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejestr pojazdów</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styl.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column">
+  <header class="naglowek-strony">
+    <div class="container">
+      <h1 class="mb-0">Rejestr pojazdów</h1>
+    </div>
+  </header>
+  <main class="container flex-grow-1 pb-4">
+    <div id="komunikaty"></div>
+    <section class="pasek-akcji">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormularz" id="przyciskDodaj">Dodaj</button>
+    </section>
+    <section class="karta-lista card">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered mb-0 tabela-pojazdy align-middle">
+            <thead>
+              <tr>
+                <th>Nr rejestracyjny</th>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Rok produkcji</th>
+                <th>Data przeglądu</th>
+                <th>Właściciel</th>
+                <th class="text-end">Akcje</th>
+              </tr>
+            </thead>
+            <tbody id="listaPojazdow">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal fade" id="modalFormularz" tabindex="-1" aria-labelledby="tytulFormularza" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tytulFormularza">Dodaj pojazd</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+        </div>
+        <form id="formularzPojazd" novalidate>
+          <div class="modal-body">
+            <input type="hidden" id="indeksEdycji" value="">
+            <div class="mb-3">
+              <label for="poleRej" class="form-label">Nr rejestracyjny</label>
+              <input type="text" class="form-control" id="poleRej" required maxlength="10" pattern="[A-Za-z0-9\s\-]{2,10}">
+              <div class="invalid-feedback">Numer rejestracyjny: 2–10 znaków (litery, cyfry, spacja, myślnik).</div>
+            </div>
+            <div class="mb-3">
+              <label for="poleMarka" class="form-label">Marka</label>
+              <input type="text" class="form-control" id="poleMarka" required maxlength="50">
+              <div class="invalid-feedback">Wpisz markę.</div>
+            </div>
+            <div class="mb-3">
+              <label for="poleModel" class="form-label">Model</label>
+              <input type="text" class="form-control" id="poleModel" maxlength="50">
+            </div>
+            <div class="mb-3">
+              <label for="poleRok" class="form-label">Rok produkcji</label>
+              <input type="number" class="form-control" id="poleRok" min="1900" max="2030" required>
+              <div class="invalid-feedback">Rok: 1900–2030.</div>
+            </div>
+            <div class="mb-3">
+              <label for="poleDataPrzeglad" class="form-label">Data przeglądu</label>
+              <input type="date" class="form-control" id="poleDataPrzeglad" required>
+              <div class="invalid-feedback">Wskaż datę przeglądu.</div>
+            </div>
+            <div class="mb-3">
+              <label for="poleWlasciciel" class="form-label">Właściciel</label>
+              <input type="text" class="form-control" id="poleWlasciciel" required maxlength="100">
+              <div class="invalid-feedback">Wpisz właściciela.</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+            <button type="submit" class="btn btn-primary" id="przyciskZapisz">Zapisz</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalUsunPotwierdzenie" tabindex="-1" aria-labelledby="tytulUsun" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tytulUsun">Usunięcie pojazdu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">Czy na pewno usunąć ten pojazd z rejestru?</p>
+          <p class="fw-bold mb-0" id="tekstUsuwanyRej"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nie</button>
+          <button type="button" class="btn btn-danger" id="przyciskPotwierdzUsun">Tak, usuń</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="skrypt.js"></script>
+</body>
+</html>
