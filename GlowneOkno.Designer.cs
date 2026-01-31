@@ -1,0 +1,170 @@
+namespace EwidencjaPojazdowMarcin
+{
+    partial class GlowneOkno
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+                components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            grpDane = new GroupBox();
+            tbWlasciciel = new TextBox();
+            dtpPrzeglad = new DateTimePicker();
+            tbRok = new TextBox();
+            tbModel = new TextBox();
+            tbMarka = new TextBox();
+            tbRej = new TextBox();
+            lblWlasciciel = new Label();
+            lblPrzeglad = new Label();
+            lblRok = new Label();
+            lblModel = new Label();
+            lblMarka = new Label();
+            lblRej = new Label();
+            btnDodajPojazd = new Button();
+            btnOtworzRaport = new Button();
+            grid = new DataGridView();
+            grpDane.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grid).BeginInit();
+            SuspendLayout();
+            grpDane.Controls.Add(tbWlasciciel);
+            grpDane.Controls.Add(dtpPrzeglad);
+            grpDane.Controls.Add(tbRok);
+            grpDane.Controls.Add(tbModel);
+            grpDane.Controls.Add(tbMarka);
+            grpDane.Controls.Add(tbRej);
+            grpDane.Controls.Add(lblWlasciciel);
+            grpDane.Controls.Add(lblPrzeglad);
+            grpDane.Controls.Add(lblRok);
+            grpDane.Controls.Add(lblModel);
+            grpDane.Controls.Add(lblMarka);
+            grpDane.Controls.Add(lblRej);
+            grpDane.Location = new Point(15, 15);
+            grpDane.Name = "grpDane";
+            grpDane.Size = new Size(320, 215);
+            grpDane.TabIndex = 0;
+            grpDane.TabStop = false;
+            grpDane.Text = "Dane pojazdu";
+            tbWlasciciel.Location = new Point(110, 175);
+            tbWlasciciel.Name = "tbWlasciciel";
+            tbWlasciciel.Size = new Size(195, 23);
+            tbWlasciciel.TabIndex = 11;
+            dtpPrzeglad.Format = DateTimePickerFormat.Short;
+            dtpPrzeglad.Location = new Point(110, 145);
+            dtpPrzeglad.Name = "dtpPrzeglad";
+            dtpPrzeglad.Size = new Size(195, 23);
+            dtpPrzeglad.TabIndex = 10;
+            tbRok.Location = new Point(110, 115);
+            tbRok.Name = "tbRok";
+            tbRok.Size = new Size(195, 23);
+            tbRok.TabIndex = 9;
+            tbModel.Location = new Point(110, 85);
+            tbModel.Name = "tbModel";
+            tbModel.Size = new Size(195, 23);
+            tbModel.TabIndex = 8;
+            tbMarka.Location = new Point(110, 55);
+            tbMarka.Name = "tbMarka";
+            tbMarka.Size = new Size(195, 23);
+            tbMarka.TabIndex = 7;
+            tbRej.Location = new Point(110, 25);
+            tbRej.Name = "tbRej";
+            tbRej.Size = new Size(195, 23);
+            tbRej.TabIndex = 6;
+            lblWlasciciel.AutoSize = true;
+            lblWlasciciel.Location = new Point(15, 178);
+            lblWlasciciel.Name = "lblWlasciciel";
+            lblWlasciciel.Size = new Size(65, 15);
+            lblWlasciciel.TabIndex = 5;
+            lblWlasciciel.Text = "Właściciel:";
+            lblPrzeglad.AutoSize = true;
+            lblPrzeglad.Location = new Point(15, 148);
+            lblPrzeglad.Name = "lblPrzeglad";
+            lblPrzeglad.Size = new Size(85, 15);
+            lblPrzeglad.TabIndex = 4;
+            lblPrzeglad.Text = "Data przeglądu:";
+            lblRok.AutoSize = true;
+            lblRok.Location = new Point(15, 118);
+            lblRok.Name = "lblRok";
+            lblRok.Size = new Size(79, 15);
+            lblRok.TabIndex = 3;
+            lblRok.Text = "Rok produkcji:";
+            lblModel.AutoSize = true;
+            lblModel.Location = new Point(15, 88);
+            lblModel.Name = "lblModel";
+            lblModel.Size = new Size(43, 15);
+            lblModel.TabIndex = 2;
+            lblModel.Text = "Model:";
+            lblMarka.AutoSize = true;
+            lblMarka.Location = new Point(15, 58);
+            lblMarka.Name = "lblMarka";
+            lblMarka.Size = new Size(43, 15);
+            lblMarka.TabIndex = 1;
+            lblMarka.Text = "Marka:";
+            lblRej.AutoSize = true;
+            lblRej.Location = new Point(15, 28);
+            lblRej.Name = "lblRej";
+            lblRej.Size = new Size(100, 15);
+            lblRej.TabIndex = 0;
+            lblRej.Text = "Nr rejestracyjny:";
+            btnDodajPojazd.Location = new Point(350, 25);
+            btnDodajPojazd.Name = "btnDodajPojazd";
+            btnDodajPojazd.Size = new Size(130, 32);
+            btnDodajPojazd.TabIndex = 1;
+            btnDodajPojazd.Text = "Dodaj pojazd";
+            btnDodajPojazd.UseVisualStyleBackColor = true;
+            btnDodajPojazd.Click += btnDodajPojazd_Click;
+            btnOtworzRaport.Location = new Point(350, 68);
+            btnOtworzRaport.Name = "btnOtworzRaport";
+            btnOtworzRaport.Size = new Size(230, 32);
+            btnOtworzRaport.TabIndex = 2;
+            btnOtworzRaport.Text = "Raport – przegląd w tym miesiącu";
+            btnOtworzRaport.UseVisualStyleBackColor = true;
+            btnOtworzRaport.Click += btnOtworzRaport_Click;
+            grid.AllowUserToAddRows = false;
+            grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid.Location = new Point(15, 245);
+            grid.Name = "grid";
+            grid.ReadOnly = true;
+            grid.Size = new Size(755, 295);
+            grid.TabIndex = 3;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(784, 551);
+            Controls.Add(grid);
+            Controls.Add(btnOtworzRaport);
+            Controls.Add(btnDodajPojazd);
+            Controls.Add(grpDane);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "GlowneOkno";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Ewidencja pojazdów";
+            grpDane.ResumeLayout(false);
+            grpDane.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)grid).EndInit();
+            ResumeLayout(false);
+        }
+
+        private GroupBox grpDane;
+        private Label lblRej;
+        private Label lblMarka;
+        private Label lblModel;
+        private Label lblRok;
+        private Label lblPrzeglad;
+        private Label lblWlasciciel;
+        private TextBox tbRej;
+        private TextBox tbMarka;
+        private TextBox tbModel;
+        private TextBox tbRok;
+        private DateTimePicker dtpPrzeglad;
+        private TextBox tbWlasciciel;
+        private Button btnDodajPojazd;
+        private Button btnOtworzRaport;
+        private DataGridView grid;
+    }
+}

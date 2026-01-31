@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="PrzegladyMiesiac">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a1b2c3d4-e5f6-7890-abcd-ef1234567890</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="PrzegladyMiesiac">
+      <Query>
+        <DataSourceName>PrzegladyMiesiac</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="Rejestracja">
+          <DataField>Rejestracja</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Marka">
+          <DataField>Marka</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Wlasciciel">
+          <DataField>Wlasciciel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataPrzegladu">
+          <DataField>DataPrzegladu</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="TablixPrzeglady">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn><Width>3.5cm</Width></TablixColumn>
+                <TablixColumn><Width>4cm</Width></TablixColumn>
+                <TablixColumn><Width>5cm</Width></TablixColumn>
+                <TablixColumn><Width>3cm</Width></TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="HdrRej">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>Nr rejestracyjny</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="HdrMarka">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>Marka</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="HdrWlasciciel">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>Właściciel</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="HdrData">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>Data przeglądu</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.5cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ValRej">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Rejestracja.Value</Value></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ValMarka">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Marka.Value</Value></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ValWlasciciel">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Wlasciciel.Value</Value></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ValData">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!DataPrzegladu.Value</Value></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+                          <Style><Border><Style>Solid</Style><Width>1pt</Width><Color>LightGrey</Color></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember /><TablixMember /><TablixMember /><TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember><Visibility><Hidden>false</Hidden></Visibility></TablixMember>
+                <TablixMember>
+                  <Visibility><Hidden>false</Hidden></Visibility>
+                  <RepeatedSibling>true</RepeatedSibling>
+                  <DataElementName>Wiersz</DataElementName>
+                  <DataSetName>PrzegladyMiesiac</DataSetName>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+          </Tablix>
+        </ReportItems>
+        <Height>4cm</Height>
+        <Style />
+      </Body>
+      <Width>15.5cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>1cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="TytulRaportu">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs><Paragraph><TextRuns><TextRun><Value>Lista pojazdów z przeglądem do wykonania w tym miesiącu</Value><Style><FontSize>14pt</FontSize><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+              <Style><VerticalAlign>Middle</VerticalAlign></Style>
+            </Textbox>
+          </ReportItems>
+          <Style />
+        </PageHeader>
+        <PageFooter>
+          <Height>0.5cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="NumerStrony">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs><Paragraph><TextRuns><TextRun><Value>Strona " &amp; Globals!PageNumber &amp; " z " &amp; Globals!TotalPages</Value></TextRun></TextRuns><Style /></Paragraph></Paragraphs>
+              <Style><TextAlign>Right</TextAlign></Style>
+            </Textbox>
+          </ReportItems>
+          <Style />
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+</Report>
